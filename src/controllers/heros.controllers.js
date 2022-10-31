@@ -35,7 +35,7 @@ export const pushHeros = async (req, res) => {
       "insert into herosvenezuela (name, power, type) values (?, ?, ?)",
       [name, power, type]
     );
-    res.send({ id: rows.insertId, name, power, type });
+    res.send({ id: rows.insertId, name: name, power: power, type: type });
   } catch {
     res.status(500).json("Algo ha salido mal");
   }
